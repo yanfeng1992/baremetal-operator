@@ -655,6 +655,9 @@ func getHostArchitecture(host *metal3v1alpha1.BareMetalHost) string {
 		host.Status.HardwareDetails.CPU.Arch != "" {
 		return host.Status.HardwareDetails.CPU.Arch
 	}
+	if host.Spec.Architecture != "" {
+		return host.Spec.Architecture
+	}
 	if hwprof, err := hardware.GetProfile(host.Status.HardwareProfile); err == nil {
 		return hwprof.CPUArch
 	}

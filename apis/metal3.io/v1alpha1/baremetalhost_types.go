@@ -407,6 +407,10 @@ type BareMetalHostSpec struct {
 	// A custom deploy procedure.
 	// +optional
 	CustomDeploy *CustomDeploy `json:"customDeploy,omitempty"`
+
+	// BMH architecture.
+	// +optional
+	Architecture string `json:"architecture,omitempty"`
 }
 
 // AutomatedCleaningMode is the interface to enable/disable automated cleaning
